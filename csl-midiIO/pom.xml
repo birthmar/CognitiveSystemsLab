@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>de.tucottbus.kt.csl</groupId>
+		<artifactId>CognitiveSystemsLab</artifactId>
+		<version>0.1.05-SNAPSHOT</version>
+	</parent>
+	<artifactId>csl-midiIO</artifactId>
+	<name>Midi IO Communication</name>
+
+	<build>
+		<defaultGoal>package</defaultGoal>
+
+		<plugins>
+			<!-- Modifies the jars manifest file. Here we add the Main-Class attribute, 
+				for example. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>dependency</classpathPrefix>
+							<packageName>${project.packageName}</packageName>
+							<mainClass>${project.mainClass}</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<!-- This generates an extra jar file that can be run standalone. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>${project.mainClass}</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>${project.mainClass}</mainClass>
+		            <executable>java</executable>
+		            <arguments>
+		                <argument>-Xdock:name="Midi IO"</argument>
+		                <argument>-classpath</argument>
+		                <classpath />
+		                <argument>${project.mainClass}</argument>
+		            </arguments>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.m2e</groupId>
+				<artifactId>lifecycle-mapping</artifactId>
+				<version>1.0.0</version>
+				<configuration>
+					<mainClass>${project.mainClass}</mainClass>
+					<lifecycleMappingMetadata>
+						<pluginExecutions>
+							<pluginExecution>
+								<pluginExecutionFilter>
+									<groupId>org.codehaus.mojo</groupId>
+									<artifactId>exec-maven-plugin</artifactId>
+									<versionRange>[1.2.1,)</versionRange>
+									<goals>
+										<goal>java</goal>
+										<goal>exec</goal>
+									</goals>
+								</pluginExecutionFilter>
+								<action>
+									<ignore />
+								</action>
+							</pluginExecution>
+						</pluginExecutions>
+					</lifecycleMappingMetadata>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.apple</groupId>
+			<artifactId>AppleJavaExtensions</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>de.tucottbus.kt.csl</groupId>
+			<artifactId>csl-logging</artifactId>
+			<version>0.1.05-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<properties>
+		<jdk.version>1.8</jdk.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+</project>
