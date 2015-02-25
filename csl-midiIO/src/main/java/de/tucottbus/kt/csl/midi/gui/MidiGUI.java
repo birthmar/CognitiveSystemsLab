@@ -25,18 +25,18 @@ import de.tucottbus.kl.csl.Logg;
 import de.tucottbus.kt.csl.midi.io.MidiHandler;
 
 public class MidiGUI {
-  private final String ICON = "/midiIO_icon.png";
-  
+  private final static String ICON = "/midiIO_icon.png";
+
   private URL url = null;
   private String classkey = getClass().getName();
-  
+
   private JFrame frame;
-  
+
   private Choice midiInChoice = new Choice();
   private Choice midiOutChoice = new Choice();
 
   private MidiHandler handler;
-  
+
   public MidiGUI() {
     try {
       url = this.getClass().getResource(ICON);
@@ -44,21 +44,21 @@ public class MidiGUI {
       Logg.err(classkey, "Cannot find URL for programm icon: " + e.getMessage());
     }
     handler = new MidiHandler();
-    
+
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         initGUI();
       }
     });
-    
-    if(handler.isDefaultDeviceAvailable())
+
+    if (handler.isDefaultDeviceAvailable())
       handler.sendTestMessages();
   }
 
   private void initGUI() {
     frame = new JFrame("Small MIDI IO System");
     frame.setLayout(new FlowLayout());
-    
+
     if (url != null) {
       if (System.getProperty("os.name").contains("Mac OS X")) {
         Image image = Toolkit.getDefaultToolkit().getImage(url);
@@ -68,12 +68,13 @@ public class MidiGUI {
       ImageIcon img = new ImageIcon(url);
       frame.setIconImage(img.getImage());
     }
-    
+
     MenuBar mb = new MenuBar();
     Menu menu = new Menu("File");
     MenuItem quit = new MenuItem("Quit", new MenuShortcut('Q'));
     quit.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
+        e.getSource();
         System.exit(0);
       }
     });
@@ -86,7 +87,7 @@ public class MidiGUI {
     frame.add(new Label("   MIDI OUT: "));
     frame.add(midiOutChoice);
 
-    if(handler.isDefaultDeviceAvailable()){
+    if (handler.isDefaultDeviceAvailable()) {
       midiInChoice.addItem(handler.getMidiInDeviceName());
       midiOutChoice.addItem(handler.getMidiOutDeviceName());
     }

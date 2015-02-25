@@ -11,7 +11,7 @@ public class MidiReceiver implements Receiver {
   public MidiReceiver(String name) {
     this.setName(name);
   }
-  
+
   public String getName() {
     return name;
   }
@@ -21,7 +21,7 @@ public class MidiReceiver implements Receiver {
   }
 
   public void send(MidiMessage msg, long timeStamp) {
-    parser.parsceHexToIntString(msg);
+    parser.parsceHexToIntString(msg, timeStamp);
   }
 
   public void close() {
