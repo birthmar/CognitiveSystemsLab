@@ -106,7 +106,7 @@
 		</dependency>
 		<dependency>
 			<groupId>de.tucottbus.kt.csl</groupId>
-			<artifactId>csl-logging</artifactId>
+			<artifactId>csl_logging</artifactId>
 			<version>0.1.05-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
