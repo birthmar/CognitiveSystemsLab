@@ -112,7 +112,6 @@
 	</dependencies>
 
 	<modules>
-		
 		<module>csl-logging</module>
 		<module>csl-midiIO</module>
 	</modules>
