@@ -8,66 +8,18 @@
 	</parent>
 	<artifactId>csl-midiIO</artifactId>
 	<name>Midi IO Communication</name>
+		<properties>
+		<jdk.version>1.8</jdk.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.packageName>de.tucottbus.kt.csl</project.packageName>
+		<project.mainClass>de.tucottbus.kt.csl.midi.Main</project.mainClass>
+		<root.basedir>${project.parent.relativePath}</root.basedir>
+	</properties>
 
 	<build>
 		<defaultGoal>package</defaultGoal>
-
 		<plugins>
-			<!-- Modifies the jars manifest file. Here we add the Main-Class attribute, 
-				for example. -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>dependency</classpathPrefix>
-							<packageName>${project.packageName}</packageName>
-							<mainClass>${project.mainClass}</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
-
-			<!-- This generates an extra jar file that can be run standalone. -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-					<archive>
-						<manifest>
-							<mainClass>${project.mainClass}</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>${project.mainClass}</mainClass>
-		            <executable>java</executable>
-		            <arguments>
-		                <argument>-Xdock:name="Midi IO"</argument>
-		                <argument>-classpath</argument>
-		                <classpath />
-		                <argument>${project.mainClass}</argument>
-		            </arguments>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
+		
 			<plugin>
 				<groupId>org.eclipse.m2e</groupId>
 				<artifactId>lifecycle-mapping</artifactId>
@@ -110,8 +62,4 @@
 			<version>0.1.05-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
-	<properties>
-		<jdk.version>1.8</jdk.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 </project>

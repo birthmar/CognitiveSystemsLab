@@ -5,9 +5,10 @@
 	<version>0.1.05-SNAPSHOT</version>
 	<properties>
 		<jdk.version>1.8</jdk.version>
-		<project.mainClass>de.tucottbus.kt.csl.midi.Main</project.mainClass>
-		<project.packageName>de.tucottbus.kt.csl</project.packageName>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.packageName>de.tucottbus.kt.csl</project.packageName>
+		<project.mainClass>de.tucottbus.kt.csl.midi.Main</project.mainClass>
+		<root.basedir>${project.parent.relativePath}</root.basedir>
 	</properties>
 	<url>https://www.tu-cottbus.de/kommunikationstechnik/wiki/index.php</url>
 	<name>Cognitive System Lab</name>
@@ -20,93 +21,79 @@
 
 	<build>
 		<defaultGoal>package</defaultGoal>
-		<plugins>
+		<pluginManagement>
+			<plugins>
 
-			<!-- To compile to code -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.2</version>
-				<configuration>
-					<source>${jdk.version}</source>
-					<target>${jdk.version}</target>
-					<showWarnings>false</showWarnings>
-					<showDeprecation>true</showDeprecation>
-				</configuration>
-			</plugin>
+				<!-- To compile to code -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.2</version>
+					<configuration>
+						<source>${jdk.version}</source>
+						<target>${jdk.version}</target>
+						<showWarnings>false</showWarnings>
+						<showDeprecation>true</showDeprecation>
+					</configuration>
+				</plugin>
 
-			<!-- Modifies the jars manifest file. Here we add the Main-Class attribute, 
-				for example. -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>dependency</classpathPrefix>
-							<packageName>${project.packageName}</packageName>
-							<mainClass>${project.mainClass}</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
+				<!-- Modifies the jars manifest file. Here we add the Main-Class attribute, 
+					for example. -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.5</version>
+					<configuration>
+						<archive>
+							<manifest>
+								<addClasspath>true</addClasspath>
+								<classpathPrefix>dependency</classpathPrefix>
+								<packageName>${project.packageName}</packageName>
+								<mainClass>${project.mainClass}</mainClass>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
 
-			<!-- This executes a main class with maven (e.g. goal:"post-clean install 
-				exec:java") -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.3.2</version>
-				<configuration>
-					<mainClass>${project.mainClass}</mainClass>
-					<workingDirectory>${project.build.directory}\classes</workingDirectory>
-					<includeProjectDependencies>true</includeProjectDependencies>
-				</configuration>
-			</plugin>
+				<!-- This generates an extra jar file that can be run standalone. -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.5.3</version>
+					<configuration>
+						<descriptorRefs>
+							<descriptorRef>jar-with-dependencies</descriptorRef>
+						</descriptorRefs>
+						<archive>
+							<manifest>
+								<mainClass>${project.mainClass}</mainClass>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
 
-			<!-- This generates an extra jar file that can be run standalone. -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.5.3</version>
-				<configuration>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-					<archive>
-						<manifest>
-							<mainClass>${project.mainClass}</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
+				<!-- This executes a main class with maven (e.g. goal:"post-clean install 
+					exec:java") -->
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<version>1.3.2</version>
+					<configuration>
+						<mainClass>${project.mainClass}</mainClass>
+						<workingDirectory>${project.build.directory}\classes</workingDirectory>
+						<includeProjectDependencies>true</includeProjectDependencies>
+					</configuration>
+				</plugin>
 
-			<!-- Deploying a final build to external repository -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.2</version>
-				<executions>
-					<execution>
-						<id>default-deploy</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>versions-maven-plugin</artifactId>
-				<version>2.1</version>
-			</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>versions-maven-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
 
 
-		</plugins>
+			</plugins>
+		</pluginManagement>
 	</build>
 
 	<dependencyManagement>
@@ -133,5 +120,9 @@
 	<modules>
 		<module>csl-logging</module>
 		<module>csl-midiIO</module>
+		
+		<module>csl-audio</module>
+		<module>csl-ceiling</module>
+		<module>csl-led</module>
 	</modules>
 </project>
