@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>de.tucottbus.kt.csl</groupId>
-		<artifactId>CognitiveSystemsLab</artifactId>
+		<groupId>de.sizaz.stb</groupId>
+		<artifactId>SizazToolBox</artifactId>
 		<version>0.1.05-SNAPSHOT</version>
 	</parent>
 	<artifactId>csl-midiIO</artifactId>

@@ -1,23 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>de.tucottbus.kt.csl</groupId>
+	<groupId>de.sizaz.stb</groupId>
 	<version>0.1.05-SNAPSHOT</version>
 	<properties>
 		<jdk.version>1.8</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.packageName>de.tucottbus.kt.csl</project.packageName>
-		<project.mainClass>de.tucottbus.kt.csl.midi.Main</project.mainClass>
+		<project.packageName>de.sizaz.stb</project.packageName>
+		<project.mainClass>de.sizaz.stb.midi.Main</project.mainClass>
 		<root.basedir>${project.parent.relativePath}</root.basedir>
 	</properties>
-	<url>https://www.tu-cottbus.de/kommunikationstechnik/wiki/index.php</url>
-	<name>Cognitive System Lab</name>
-	<organization>
-		<name>Chair of Communications Engineering, BTU Cottbus-Senftenberg</name>
-		<url>https://www.tu-cottbus.de/fakultaet3/en/communications-engineering.html</url>
-	</organization>
 	<packaging>pom</packaging>
-	<artifactId>CognitiveSystemsLab</artifactId>
+	<artifactId>SizazToolBox</artifactId>
 
 	<build>
 		<defaultGoal>package</defaultGoal>
@@ -123,4 +117,5 @@
 		<module>csl-midiIO</module>
 		<module>csl-audio</module>
 	</modules>
+	<name>Sizaz Tool Box</name>
 </project>
