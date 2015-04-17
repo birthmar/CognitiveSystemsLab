@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>de.sizaz.stb</groupId>
-    <artifactId>SizazToolBox</artifactId>
+    <artifactId>stb</artifactId>
     <version>0.1.05-SNAPSHOT</version>
   </parent>
   <artifactId>stb-logging</artifactId>

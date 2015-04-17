@@ -11,7 +11,7 @@
 		<root.basedir>${project.parent.relativePath}</root.basedir>
 	</properties>
 	<packaging>pom</packaging>
-	<artifactId>SizazToolBox</artifactId>
+	<artifactId>stb</artifactId>
 
 	<build>
 		<defaultGoal>package</defaultGoal>

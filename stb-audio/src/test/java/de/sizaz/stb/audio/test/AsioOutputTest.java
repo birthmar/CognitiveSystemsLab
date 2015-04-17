@@ -1,7 +1,7 @@
-package de.tucottbus.kt.csl.audio.test;
+package de.sizaz.stb.audio.test;
 
-import de.tucottbus.kt.csl.audio.device.AAsioAudioDevice;
-import de.tucottbus.kt.csl.audio.device.AsioOutputDevice;
+import de.sizaz.stb.audio.device.AAsioAudioDevice;
+import de.sizaz.stb.audio.device.AsioOutputDevice;
 
 public class AsioOutputTest {
 

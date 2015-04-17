@@ -4,7 +4,7 @@ import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.Receiver;
 import javax.sound.midi.ShortMessage;
 
-import de.tucottbus.kl.csl.Logg;
+import de.sizaz.stb.Logg;
 
 public class MidiTransmitter {
   private String classkey = getClass().getName();

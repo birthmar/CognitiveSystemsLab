@@ -16,7 +16,7 @@ import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.util.FileManager;
 import com.hp.hpl.jena.vocabulary.DC;
 
-import de.tucottbus.kl.csl.Logg;
+import de.sizaz.stb.Logg;
 
 public class CSLConfig {
   private final static String CLASSKEY = "CSL configuration";
