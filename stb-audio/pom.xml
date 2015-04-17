@@ -5,16 +5,16 @@
     <artifactId>SizazToolBox</artifactId>
     <version>0.1.05-SNAPSHOT</version>
   </parent>
-  <artifactId>csl-audio</artifactId>
+  <artifactId>stb-audio</artifactId>
   <dependencies>
   	<dependency>
-  		<groupId>de.tucottbus.kt.csl</groupId>
-  		<artifactId>csl-logging</artifactId>
+  		<groupId>de.sizaz.stb</groupId>
+  		<artifactId>stb-logging</artifactId>
   		<version>0.1.05-SNAPSHOT</version>
   	</dependency>
   	<dependency>
-  		<groupId>de.tucottbus.kt.csl</groupId>
-  		<artifactId>csl-core</artifactId>
+  		<groupId>de.sizaz.stb</groupId>
+  		<artifactId>stb-core</artifactId>
   		<version>0.1.05-SNAPSHOT</version>
   	</dependency>
   	<dependency>

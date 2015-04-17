@@ -5,11 +5,11 @@
     <artifactId>SizazToolBox</artifactId>
     <version>0.1.05-SNAPSHOT</version>
   </parent>
-  <artifactId>csl-core</artifactId>
+  <artifactId>stb-core</artifactId>
   <dependencies>
   	<dependency>
-  		<groupId>de.tucottbus.kt.csl</groupId>
-  		<artifactId>csl-logging</artifactId>
+  		<groupId>de.sizaz.stb</groupId>
+  		<artifactId>stb-logging</artifactId>
   		<version>0.1.05-SNAPSHOT</version>
   	</dependency>
   	<dependency>

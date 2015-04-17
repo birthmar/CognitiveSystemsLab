@@ -6,7 +6,7 @@
 		<artifactId>SizazToolBox</artifactId>
 		<version>0.1.05-SNAPSHOT</version>
 	</parent>
-	<artifactId>csl-midiIO</artifactId>
+	<artifactId>stb-midiIO</artifactId>
 	<name>Midi IO Communication</name>
 		<properties>
 		<jdk.version>1.8</jdk.version>
@@ -57,8 +57,8 @@
 			<version>1.4</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tucottbus.kt.csl</groupId>
-			<artifactId>csl-logging</artifactId>
+			<groupId>de.sizaz.stb</groupId>
+			<artifactId>stb-logging</artifactId>
 			<version>0.1.05-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

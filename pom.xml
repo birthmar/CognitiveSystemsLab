@@ -112,10 +112,10 @@
 	</dependencies>
 
 	<modules>
-		<module>csl-logging</module>
-		<module>csl-core</module>
-		<module>csl-midiIO</module>
-		<module>csl-audio</module>
+		<module>stb-logging</module>
+		<module>stb-core</module>
+		<module>stb-midiIO</module>
+		<module>stb-audio</module>
 	</modules>
 	<name>Sizaz Tool Box</name>
 </project>

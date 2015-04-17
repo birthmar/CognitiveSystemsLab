@@ -5,7 +5,7 @@
     <artifactId>SizazToolBox</artifactId>
     <version>0.1.05-SNAPSHOT</version>
   </parent>
-  <artifactId>csl-logging</artifactId>
+  <artifactId>stb-logging</artifactId>
   <name>Project Logger</name>
   <description>Logger class for csl project </description>
   <dependencies>
