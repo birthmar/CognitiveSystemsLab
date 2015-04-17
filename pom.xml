@@ -115,20 +115,12 @@
 			<version>2.4</version>
 			<type>maven-plugin</type>
 		</dependency>
-		<dependency>
-			<groupId>de.tucottbus.kt.csl</groupId>
-			<artifactId>csl-logging</artifactId>
-			<version>0.1.05-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 
 	<modules>
 		<module>csl-logging</module>
+		<module>csl-core</module>
 		<module>csl-midiIO</module>
-		
 		<module>csl-audio</module>
-		<module>csl-ceiling</module>
-		<module>csl-led</module>
-		<module>csl-config</module>
 	</modules>
 </project>
