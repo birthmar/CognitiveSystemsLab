@@ -1,0 +1,8 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description>
+    <dc:creator>Led TV</dc:creator>
+    <dc:date>2015-04-09T12:00:43.163</dc:date>
+  </rdf:Description>
+</rdf:RDF>
