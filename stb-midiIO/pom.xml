@@ -7,7 +7,7 @@
 		<version>0.1.05-SNAPSHOT</version>
 	</parent>
 	<artifactId>stb-midiIO</artifactId>
-	<name>Midi IO Communication</name>
+	<name>STB Midi IO Communication</name>
 		<properties>
 		<jdk.version>1.8</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -59,6 +59,11 @@
 		<dependency>
 			<groupId>de.sizaz.stb</groupId>
 			<artifactId>stb-logging</artifactId>
+			<version>0.1.05-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>de.sizaz.stb</groupId>
+			<artifactId>stb-core</artifactId>
 			<version>0.1.05-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

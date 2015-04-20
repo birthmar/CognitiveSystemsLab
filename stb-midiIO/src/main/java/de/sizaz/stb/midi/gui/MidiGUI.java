@@ -22,6 +22,7 @@ import javax.swing.SwingUtilities;
 import com.apple.eawt.Application;
 
 import de.sizaz.stb.Logg;
+import de.sizaz.stb.midi.device.MidiIODevice;
 import de.sizaz.stb.midi.io.MidiHandler;
 
 public class MidiGUI {
@@ -51,8 +52,7 @@ public class MidiGUI {
       }
     });
 
-    if (handler.isDefaultDeviceAvailable())
-      handler.sendTestMessages();
+    handler.sendTestMessages();
   }
 
   private void initGUI() {
@@ -97,7 +97,7 @@ public class MidiGUI {
         if (e.getItemSelectable() == midiInChoice) {
           handler.initMidiInputDevice(midiInChoice.getSelectedIndex());
         }
-        handler.registerMidiDevice();
+        MidiIODevice.getInstance().registerMidiDevice();
       }
     });
 
@@ -106,7 +106,7 @@ public class MidiGUI {
         if (e.getItemSelectable() == midiOutChoice) {
           handler.initMidiOutputDevice(midiOutChoice.getSelectedIndex());
         }
-        handler.registerMidiDevice();
+        MidiIODevice.getInstance().registerMidiDevice();
       }
     });
 

@@ -6,7 +6,7 @@
     <version>0.1.05-SNAPSHOT</version>
   </parent>
   <artifactId>stb-logging</artifactId>
-  <name>Project Logger</name>
+  <name>STB Project Logger</name>
   <description>Logger class for csl project </description>
   <dependencies>
   	<dependency>
