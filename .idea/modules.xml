@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/stb-logging/bin/csl-logging.iml" filepath="$PROJECT_DIR$/stb-logging/bin/csl-logging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stb-midiIO/bin/csl-midiIO.iml" filepath="$PROJECT_DIR$/stb-midiIO/bin/csl-midiIO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stb.iml" filepath="$PROJECT_DIR$/stb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stb-audio/stb-audio.iml" filepath="$PROJECT_DIR$/stb-audio/stb-audio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stb-core/stb-core.iml" filepath="$PROJECT_DIR$/stb-core/stb-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stb-logging/stb-logging.iml" filepath="$PROJECT_DIR$/stb-logging/stb-logging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stb-midiIO/stb-midiIO.iml" filepath="$PROJECT_DIR$/stb-midiIO/stb-midiIO.iml" />
+    </modules>
+  </component>
+</project>

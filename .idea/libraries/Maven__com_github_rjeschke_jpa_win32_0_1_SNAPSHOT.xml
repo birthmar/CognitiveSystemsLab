@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.rjeschke:jpa-win32:0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/rjeschke/jpa-win32/0.1-SNAPSHOT/jpa-win32-0.1-20120613.190803-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/rjeschke/jpa-win32/0.1-SNAPSHOT/jpa-win32-0.1-20120613.190803-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/rjeschke/jpa-win32/0.1-SNAPSHOT/jpa-win32-0.1-20120613.190803-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

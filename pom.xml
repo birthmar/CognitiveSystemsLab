@@ -116,6 +116,7 @@
 		<module>stb-core</module>
 		<module>stb-midiIO</module>
 		<module>stb-audio</module>
+		<module>stb-opencl</module>
 	</modules>
 	<name>Sizaz Tool Box</name>
 </project>

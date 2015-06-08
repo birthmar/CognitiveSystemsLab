@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.rjeschke:jpa-win64:0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/rjeschke/jpa-win64/0.1-SNAPSHOT/jpa-win64-0.1-20120613.190753-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/rjeschke/jpa-win64/0.1-SNAPSHOT/jpa-win64-0.1-20120613.190753-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/rjeschke/jpa-win64/0.1-SNAPSHOT/jpa-win64-0.1-20120613.190753-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
