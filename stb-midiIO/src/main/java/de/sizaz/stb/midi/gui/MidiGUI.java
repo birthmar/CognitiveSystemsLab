@@ -26,7 +26,8 @@ import de.sizaz.stb.midi.device.MidiIODevice;
 import de.sizaz.stb.midi.io.MidiHandler;
 
 public class MidiGUI {
-  private final static String ICON = "/midiIO_icon.png";
+  //private final static String ICON = "/midiIO_icon.png";
+  private final static String ICON = "CSL_icon_20150611mb.png";
 
   private URL url = null;
   private String classkey = getClass().getName();

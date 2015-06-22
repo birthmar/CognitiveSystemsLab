@@ -1,9 +1,10 @@
-package de.sizaz.stb.opencl;
+package de.sizaz.stb.opencl.images;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 
@@ -19,9 +20,9 @@ import com.nativelibs4java.opencl.CLSampler.FilterMode;
 import com.nativelibs4java.opencl.CLProgram;
 import com.nativelibs4java.opencl.CLQueue;
 import com.nativelibs4java.opencl.JavaCL;
-import com.nativelibs4java.util.IOUtils;
 
 public class CopyImageExample {
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) throws IOException {
         CLContext context = JavaCL.createBestContext();
         CLQueue queue = context.createDefaultQueue();
@@ -47,8 +48,9 @@ public class CopyImageExample {
 
         // Create OpenCL input buffers (using the native memory pointers aPtr
         // and bPtr) :
-        InputStream in = CopyImageExample.class.getResourceAsStream("your_image.png");
-        BufferedImage img = ImageIO.read(in);
+
+        String resourceName = "your_image.png";
+        BufferedImage img = ImageIO.read(getResourcesStream(resourceName));
 
         CLImage2D inputImage = context.createImage2D(Usage.Input, img, false);
 
@@ -57,8 +59,7 @@ public class CopyImageExample {
         CLSampler sampler = context.createSampler(false, AddressingMode.ClampToEdge, FilterMode.Nearest);
 
         // Read the program sources and compile them :
-        String src = IOUtils.readText(CopyImageExample.class.getResource("CopyImageExample.cl"));
-
+        String src = convertStreamToString(getResourcesStream("CopyImageExample.cl")); 
         CLProgram program = context.createProgram(devices, src);
 
         // Get and call the kernel :
@@ -70,6 +71,16 @@ public class CopyImageExample {
         // blocks until rotate_image finished
         BufferedImage outPtr = outImage.read(queue, addEvt); 
 
-        ImageIO.write(outPtr, "png", new File("out.png"));
+        ImageIO.write(outPtr, "png", new File("../../../out.png"));
     }
+    
+    private static InputStream getResourcesStream(String resourceName){
+      ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+      return classLoader.getResourceAsStream(resourceName);
+    }
+    
+    static String convertStreamToString(InputStream is) {
+      Scanner s = new Scanner(is).useDelimiter("\\A");
+      return s.hasNext() ? s.next() : "";
+  }
 }
