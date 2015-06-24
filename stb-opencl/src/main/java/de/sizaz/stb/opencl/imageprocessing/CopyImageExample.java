@@ -1,4 +1,4 @@
-package de.sizaz.stb.opencl.images;
+package de.sizaz.stb.opencl.imageprocessing;
 
 import java.awt.image.BufferedImage;
 import java.io.File;

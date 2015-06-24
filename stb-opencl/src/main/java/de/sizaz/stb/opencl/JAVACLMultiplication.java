@@ -82,6 +82,5 @@ public class JAVACLMultiplication {
   
   public static void main(String[] args) throws IOException, CLBuildException {
     new JAVACLMultiplication();
-  }
-
+  }  
 }
